@@ -7,8 +7,18 @@ router.use(express.json());
 
 router.get("/tripulada", async (req, res) => {
   try {
-    const infoDb = await Tripulada.findAll();
-    res.send(infoDb);
+    const { nombre } = req.query;
+    if (nombre) {
+      const tripuladaDb = await Tripulada.findOne({
+        where: {
+          nombre,
+        },
+      });
+      res.status(202).send(tripuladaDb);
+    } else {
+      const infoDb = await Tripulada.findAll();
+      res.send(infoDb);
+    }
   } catch (error) {
     console.log(error);
   }
@@ -38,3 +48,5 @@ router.post("/tripulada", async (req, res) => {
     console.log(error);
   }
 });
+
+module.exports = router;
