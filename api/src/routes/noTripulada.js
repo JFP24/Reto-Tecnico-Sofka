@@ -17,7 +17,7 @@ router.get("/notripulada", async (req, res) => {
       });
       res.status(202).send(infoDb);
     } else {
-      //traigo una base de datos y mando un arreglo a el frontend
+      //traigo la informacion de la base de datos y mando un arreglo a el frontend
       const lanzadera = await NoTripulada.findAll();
       res.status(202).send(lanzadera);
     }

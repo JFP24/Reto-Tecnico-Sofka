@@ -15,7 +15,21 @@ router.get("/lanzadera", async (req, res) => {
           nombre,
         },
       });
-      res.status(202).send(infoDb);
+      //console.log(infoDb);
+      const info = [
+        {
+          nombre: infoDb.nombre,
+          velocidad: infoDb.velocidad,
+          peso: infoDb.peso,
+          combustible: infoDb.combustible,
+          pais: infoDb.pais,
+          creacion: infoDb.creacion,
+          image: infoDb.image,
+        },
+      ];
+      console.log(info, "this is ifin");
+
+      res.status(202).send(info);
     } else {
       //traigo una base de datos y mando un arreglo a el frontend
       const lanzadera = await Lanzadera.findAll();
