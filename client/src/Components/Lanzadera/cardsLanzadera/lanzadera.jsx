@@ -4,6 +4,7 @@ import { getLanzaderas, deleteLanzadera } from "../../../Redux/Action/action";
 import styles from "./cards.module.css";
 import { Link } from "react-router-dom";
 import { SearchName } from "../BuscarLanzadera/BuscarLanzadera";
+import { NavBar } from "../../Containers/NavBar/NavBar";
 
 export const Lanzadera = () => {
   const dispatch = useDispatch();
@@ -21,14 +22,17 @@ export const Lanzadera = () => {
   };
 
   return (
-    <div>
-      <h1>This is lanzadera</h1>
+    <div className={styles.todo}>
+      <div>
+        <NavBar />
+      </div>
+      <h1 className={styles.title}>Naves Lanzaderas</h1>
       <div>
         <Link to={"/crearLanzadera"}>
-          <button>Crear NaveLanzadera</button>
+          <button className={styles.crear}>Crear Nave Lanzadera</button>
         </Link>
       </div>
-      <div>
+      <div className={styles.input}>
         <SearchName />
       </div>
       <div className={styles.cards}>
@@ -36,15 +40,24 @@ export const Lanzadera = () => {
           lanzaderas.map((d) => {
             return (
               <div className={styles.container}>
-                <button key={d.id} onClick={() => handleDelete(d.id)}>
+                <button
+                  className={styles.delete}
+                  key={d.id}
+                  onClick={() => handleDelete(d.id)}
+                >
                   x
                 </button>
-                <div> {d.nombre}</div>
-                <div>{d.velocidad}</div>
-                <div>{d.peso}</div>
-                <div>{d.combustible}</div>
-                <div>{d.pais}</div>
-                <div>{d.creacion}</div>
+                <div className={styles.name}> {d.nombre.toUpperCase()}</div>
+                <div>
+                  <img className={styles.image} src={d.image} alt="" />
+                </div>
+                <div className={styles.propiedades}>
+                  <div>Velocidad: {d.velocidad}</div>
+                  <div>Peso :{d.peso}</div>
+                  <div>Combustible: {d.combustible}</div>
+                  <div>Pais :{d.pais}</div>
+                  <div>Año: {d.creacion}</div>
+                </div>
               </div>
             );
           })
@@ -52,9 +65,6 @@ export const Lanzadera = () => {
           <h2>No exitsten lanzaderas</h2>
         )}
       </div>
-      <Link to={"/home"}>
-        <button>Regresar</button>
-      </Link>
     </div>
   );
 };

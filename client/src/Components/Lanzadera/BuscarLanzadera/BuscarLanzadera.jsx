@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getNameLanzadera } from "../../../Redux/Action/action";
+import styles from "./buscar.module.css";
+import Swal from "sweetalert2";
 
 export const SearchName = () => {
   const dispatch = useDispatch();
@@ -20,21 +22,29 @@ export const SearchName = () => {
         buscar: "",
       });
     } else {
-      return alert("Colocar un busqueda");
+      Swal.fire({
+        icon: "error",
+        title: "Opss...",
+        text: "Debes colorcar una busquedad",
+      });
     }
   };
 
   return (
     <div>
       <input
+        className={styles.input}
         name="buscar"
         placeholder="Buscá tu juego...."
         onChange={handleInputChange}
         value={input.buscar}
         autoComplete="off"
       ></input>
-      <button onClick={handleOnClick}>Buscar</button>
+      <button onClick={handleOnClick} className={styles.buscar}>
+        Buscar
+      </button>
       <button
+        className={styles.cargar}
         onClick={() => {
           window.location.reload();
         }}

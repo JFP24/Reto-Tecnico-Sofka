@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import styles from "./crear.module.css";
+import { Link } from "react-router-dom";
 
 export const CrearLanzadera = () => {
   const dispatch = useDispatch();
@@ -48,13 +50,17 @@ export const CrearLanzadera = () => {
   }
 
   return (
-    <div>
-      <h1>this is the created</h1>
-      <div>
+    <div className={styles.container}>
+      <Link to={"/lanzadera"}>
+        <button className={styles.regresar}>Regresar</button>
+      </Link>
+      <h1 className={styles.title}>Crear Nave Lanzadera</h1>
+      <div className={styles.todo}>
         <form onSubmit={(e) => handleSubmit(e)}>
           <div>
-            <label>Nombre:</label>
+            <label className={styles.label}>Nombre:</label>
             <input
+              className={styles.input}
               placeholder="Ingrese Nombre"
               type="text"
               name="nombre"
@@ -65,10 +71,11 @@ export const CrearLanzadera = () => {
             />
           </div>
           <div>
-            <label>Velocidad:</label>
+            <label className={styles.label}>Velocidad:</label>
             <input
+              className={styles.input}
               placeholder="Ingrese Velocidad"
-              type="numbre"
+              type="number"
               name="velocidad"
               value={input.velocidad}
               onChange={(e) => handleChange(e)}
@@ -77,10 +84,11 @@ export const CrearLanzadera = () => {
             />
           </div>
           <div>
-            <label>Peso:</label>
+            <label className={styles.label}>Peso:</label>
             <input
+              className={styles.input}
               placeholder="Ingrese Nombre"
-              type="numbre"
+              type="number"
               name="peso"
               value={input.peso}
               onChange={(e) => handleChange(e)}
@@ -89,8 +97,9 @@ export const CrearLanzadera = () => {
             />
           </div>
           <div>
-            <label>Combustible:</label>
+            <label className={styles.label}>Combustible:</label>
             <input
+              className={styles.input}
               placeholder="Ingrese tipo de Combustible"
               type="text"
               name="combustible"
@@ -101,10 +110,11 @@ export const CrearLanzadera = () => {
             />
           </div>
           <div>
-            <label>Año:</label>
+            <label className={styles.label}>Año:</label>
             <input
+              className={styles.input}
               placeholder="Ingrese Año de creacion"
-              type="text"
+              type="number"
               name="creacion"
               value={input.creacion}
               onChange={(e) => handleChange(e)}
@@ -113,8 +123,9 @@ export const CrearLanzadera = () => {
             />
           </div>
           <div>
-            <label>Pais:</label>
+            <label className={styles.label}>Pais:</label>
             <input
+              className={styles.input}
               placeholder="Ingrese pais de origen"
               type="text"
               name="pais"
@@ -125,8 +136,9 @@ export const CrearLanzadera = () => {
             />
           </div>
           <div>
-            <label>Imagen:</label>
+            <label className={styles.label}>Imagen:</label>
             <input
+              className={styles.input}
               placeholder="Ingrese imagen"
               type="text"
               name="image"
@@ -136,7 +148,9 @@ export const CrearLanzadera = () => {
               //required
             />
           </div>
-          <button type="submit">Create</button>
+          <button className={styles.crear} type="submit">
+            Create
+          </button>
         </form>
       </div>
     </div>

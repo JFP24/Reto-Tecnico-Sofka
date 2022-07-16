@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+  min-height: calc(114vh - 88px);
+  background-size: 100% 100%;
+  background-image: url("https://images.alphacoders.com/975/975730.jpg");
+}
+.todo {
+  background-color: rgb(150, 150, 150);
+  padding: 70px;
+  border-radius: 20px;
+  opacity: 0.9;
+  border: solid black 2px;
+}
+
+.label {
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.form {
+  padding: 50px;
+  border: solid 3px black;
+  border-radius: 20px;
+}
+
+.input {
+  padding: 10px;
+  border-radius: 15px;
+  border: solid 2px black;
+  font-size: 15px;
+}
+
+.crear {
+  position: relative;
+  left: 70px;
+  top: 25px;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: rgb(12, 11, 11);
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.crear:hover {
+  background-color: rgb(117, 117, 117);
+  transition: all 0.5s ease;
+  color: black;
+}
+
+.title {
+  position: relative;
+  bottom: 800px;
+  color: white;
+  right: 500px;
+  font-size: 50px;
+}
+
+.regresar {
+  position: relative;
+  bottom: 800px;
+  padding: 15px;
+  right: 500px;
+  font-size: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: rgb(12, 11, 11);
+  color: white;
+}
+
+.regresar:hover {
+  background-color: rgb(117, 117, 117);
+  transition: all 0.5s ease;
+  color: black;
+}

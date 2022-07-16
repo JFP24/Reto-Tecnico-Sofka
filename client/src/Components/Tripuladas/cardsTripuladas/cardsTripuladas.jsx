@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTripuladas, deleteTripulada } from "../../../Redux/Action/action";
 import { BuscarTripuladas } from "../BuscarTripuladas/BuscarTripuladas";
 import styles from "./cards.module.css";
+import { NavBar } from "../../Containers/NavBar/NavBar";
 
 export const Tripulada = () => {
   const dispatch = useDispatch();
@@ -21,14 +22,17 @@ export const Tripulada = () => {
   };
 
   return (
-    <div>
-      <h1>This is tripulada</h1>
+    <div className={styles.todo}>
+      <div>
+        <NavBar />
+      </div>
+      <h1 className={styles.title}>Naves Tripuladas</h1>
       <div>
         <Link to={"/CrearTripulada"}>
-          <button>crear</button>
+          <button className={styles.crear}>Crea Una Nave Tripulada</button>
         </Link>
       </div>
-      <div>
+      <div className={styles.input}>
         <BuscarTripuladas />
       </div>
       <div></div>
@@ -37,13 +41,23 @@ export const Tripulada = () => {
           tripulada.map((d) => {
             return (
               <div className={styles.container} key={d.id}>
-                <button onClick={() => handleDelete(d.id)}>x</button>
-                <div> {d.nombre}</div>
-                <div>{d.capacidad}</div>
-                <div>{d.peso}</div>
-                <div>{d.combustible}</div>
-                <div>{d.pais}</div>
-                <div>{d.orbita}</div>
+                <button
+                  className={styles.delete}
+                  onClick={() => handleDelete(d.id)}
+                >
+                  x
+                </button>
+                <div className={styles.name}> {d.nombre.toUpperCase()}</div>
+                <div>
+                  <img className={styles.image} src={d.image} alt="" />
+                </div>
+                <div className={styles.propiedades}>
+                  <div> Capacidad :{d.capacidad}</div>
+                  <div>Peso : {d.peso}</div>
+                  <div>Cobustible :{d.combustible}</div>
+                  <div> Pais Origen:{d.pais}</div>
+                  <div>Orbita :{d.orbita}</div>
+                </div>
               </div>
             );
           })
@@ -51,9 +65,6 @@ export const Tripulada = () => {
           <h2>No exitsten tripuladas</h2>
         )}
       </div>
-      <Link to={"/home"}>
-        <button>Regresar</button>
-      </Link>
     </div>
   );
 };

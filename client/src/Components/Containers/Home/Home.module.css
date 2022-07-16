@@ -1,6 +1,6 @@
 .container {
   min-height: calc(100vh - 88px);
-  background-image: url("https://wallpapergets.com/1/full/c/4/d/1563417.jpg");
+  background-image: url("https://i.pinimg.com/originals/f6/06/8c/f6068ccdfbac90c1e87a291c47d5049b.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -8,7 +8,7 @@
 .routes {
   display: flex;
   justify-content: space-evenly;
-  padding-top: 400px;
+  padding-top: 500px;
 }
 
 .button {
@@ -17,4 +17,29 @@
   font-size: 30px;
   font-weight: 700;
   cursor: pointer;
+  background-color: rgb(95, 154, 243);
+}
+.button:hover {
+  background-color: rgb(184, 184, 185);
+  color: black;
+  transition: all 0.5s ease;
+}
+
+.parrafo {
+  position: absolute;
+  width: 1000px;
+  color: wheat;
+  left: 600px;
+  top: 150px;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.title {
+  position: absolute;
+  left: 800px;
+  top: 400px;
+  font-size: 46px;
+  font-weight: 700;
+  color: wheat;
 }

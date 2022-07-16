@@ -8,6 +8,7 @@ import { NoTripulada } from "./Components/NoTripuladas/cardsNoTripulada/cards.js
 import { CrearNoTripulada } from "./Components/NoTripuladas/CrearNoTripulada/CrearNoTripulada.jsx";
 import { Tripulada } from "./Components/Tripuladas/cardsTripuladas/cardsTripuladas.jsx";
 import { CrearTripulada } from "./Components/Tripuladas/CreatTripuladas/CrearTripulada.jsx";
+import { About } from "./Components/Containers/About/About.jsx";
 
 import "./App.css";
 
@@ -22,6 +23,7 @@ function App() {
       <Route path="/CrearNoTripulada" element={<CrearNoTripulada />} />
       <Route path="/Tripulada" element={<Tripulada />} />
       <Route path="/CrearTripulada" element={<CrearTripulada />} />
+      <Route path="/About" element={<About />} />
     </Routes>
   );
 }

@@ -10,6 +10,19 @@ export const Home = () => {
         <NavBar />
       </div>
       <div className={styles.container}>
+        <div>
+          <p className={styles.parrafo}>
+            Entre los más importantes logros tecnológicos de la civilización
+            humana y, lógicamente, más reciente que el ferrocarril, se
+            encuentran las naves espaciales: increíbles vehículos capaces de
+            abandonar la atmósfera terrestre, que destacan por su potencia y su
+            velocidad. Desde el punto de vista físico, hay dos conceptos que
+            siempre me han fascinado: el tiempo y la energía
+          </p>
+        </div>
+        <div>
+          <h1 className={styles.title}>¿Conoces alguna nave?</h1>
+        </div>
         <div className={styles.routes}>
           <Link to={"/lanzadera"}>
             <button className={styles.button}>Naves Lanzaderas</button>

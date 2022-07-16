@@ -7,6 +7,7 @@ import {
 } from "../../../Redux/Action/action";
 import { BuscarNoTripuladas } from "../BuscarNoTripuladas/BuscarNoTripulada";
 import styles from "./cards.module.css";
+import { NavBar } from "../../Containers/NavBar/NavBar";
 
 export const NoTripulada = () => {
   const dispatch = useDispatch();
@@ -24,29 +25,42 @@ export const NoTripulada = () => {
   };
 
   return (
-    <div>
-      <h1>This is notripulada</h1>
+    <div className={styles.todo}>
+      <div>
+        <NavBar />
+      </div>
+      <h1 className={styles.title}>Naves No Tripuladas</h1>
       <div>
         <Link to={"/CrearNoTripulada"}>
-          <button>crear</button>
+          <button className={styles.crear}>Crear nave No Tripúlada</button>
         </Link>
       </div>
-      <div>
+      <div className={styles.input}>
         <BuscarNoTripuladas />
       </div>
-      <div></div>
+
       <div className={styles.cards}>
         {noTripuladas.length > 0 ? (
           noTripuladas.map((d) => {
             return (
               <div className={styles.container} key={d.id}>
-                <button onClick={() => handleDelete(d.id)}>x</button>
-                <div> {d.nombre}</div>
-                <div>{d.velocidad}</div>
-                <div>{d.peso}</div>
-                <div>{d.combustible}</div>
-                <div>{d.pais}</div>
-                <div>{d.funcion}</div>
+                <button
+                  className={styles.delete}
+                  onClick={() => handleDelete(d.id)}
+                >
+                  x
+                </button>
+                <div className={styles.name}> {d.nombre.toUpperCase()}</div>
+                <div>
+                  <img className={styles.image} src={d.image} alt="" />
+                </div>
+                <div className={styles.propiedades}>
+                  <div>Velocidad: {d.velocidad}</div>
+                  <div>Peso : {d.peso}</div>
+                  <div>Combustible: {d.combustible}</div>
+                  <div>Pais : {d.pais}</div>
+                  <div>Funcion :{d.funcion}</div>
+                </div>
               </div>
             );
           })
@@ -54,9 +68,6 @@ export const NoTripulada = () => {
           <h2>No exitsten lanzaderas</h2>
         )}
       </div>
-      <Link to={"/home"}>
-        <button>Regresar</button>
-      </Link>
     </div>
   );
 };

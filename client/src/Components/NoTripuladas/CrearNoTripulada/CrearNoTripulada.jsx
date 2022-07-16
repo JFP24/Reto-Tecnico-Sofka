@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import styles from "./crear.module.css";
+import { Link } from "react-router-dom";
 
 export const CrearNoTripulada = () => {
   const dispatch = useDispatch();
@@ -48,13 +50,17 @@ export const CrearNoTripulada = () => {
   }
 
   return (
-    <div>
-      <h1>this is the created</h1>
-      <div>
+    <div className={styles.container}>
+      <Link to={"/lanzadera"}>
+        <button className={styles.regresar}>Regresar</button>
+      </Link>
+      <h1 className={styles.title}>Crear Nave No Tripulada</h1>
+      <div className={styles.todo}>
         <form onSubmit={(e) => handleSubmit(e)}>
           <div>
-            <label>Nombre:</label>
+            <label className={styles.label}>Nombre:</label>
             <input
+              className={styles.input}
               placeholder="Ingrese Nombre"
               type="text"
               name="nombre"
@@ -65,8 +71,9 @@ export const CrearNoTripulada = () => {
             />
           </div>
           <div>
-            <label>Velocidad:</label>
+            <label className={styles.label}>Velocidad:</label>
             <input
+              className={styles.input}
               placeholder="Ingrese Velocidad"
               type="numbre"
               name="velocidad"
@@ -77,8 +84,9 @@ export const CrearNoTripulada = () => {
             />
           </div>
           <div>
-            <label>Peso:</label>
+            <label className={styles.label}>Peso:</label>
             <input
+              className={styles.input}
               placeholder="Ingrese Nombre"
               type="numbre"
               name="peso"
@@ -89,8 +97,9 @@ export const CrearNoTripulada = () => {
             />
           </div>
           <div>
-            <label>Combustible:</label>
+            <label className={styles.label}>Combustible:</label>
             <input
+              className={styles.input}
               placeholder="Ingrese tipo de Combustible"
               type="text"
               name="combustible"
@@ -101,8 +110,9 @@ export const CrearNoTripulada = () => {
             />
           </div>
           <div>
-            <label>funcion:</label>
+            <label className={styles.label}>funcion:</label>
             <input
+              className={styles.input}
               placeholder="Ingrese la funcion"
               type="text"
               name="funcion"
@@ -113,8 +123,9 @@ export const CrearNoTripulada = () => {
             />
           </div>
           <div>
-            <label>Pais:</label>
+            <label className={styles.label}>Pais:</label>
             <input
+              className={styles.input}
               placeholder="Ingrese pais de origen"
               type="text"
               name="pais"
@@ -125,8 +136,9 @@ export const CrearNoTripulada = () => {
             />
           </div>
           <div>
-            <label>Imagen:</label>
+            <label className={styles.label}>Imagen:</label>
             <input
+              className={styles.input}
               placeholder="Ingrese imagen"
               type="text"
               name="image"
@@ -136,7 +148,9 @@ export const CrearNoTripulada = () => {
               //required
             />
           </div>
-          <button type="submit">Create</button>
+          <button className={styles.crear} type="submit">
+            Create
+          </button>
         </form>
       </div>
     </div>

@@ -7,7 +7,7 @@ import {
   GET__TRIPULADA,
   GET_NAME__TRIPULADA,
 } from "./type";
-
+import Swal from "sweetalert2";
 //aca hacemos la conexcion con el back para pedir iinformacion
 
 //traemos lla informacion del modelo lanzadera
@@ -39,7 +39,11 @@ export const getNameLanzadera = (nombre) => {
       });
     } catch (error) {
       console.log(error);
-      return alert("NO EXITE NAVE");
+      return Swal.fire({
+        icon: "error",
+        title: "Opss...",
+        text: "No exite esa nave, intenta con otra",
+      });
     }
   };
 };
@@ -99,7 +103,11 @@ export const getNameNoTripuladas = (nombre) => {
       });
     } catch (error) {
       console.log(error);
-      return alert("NO EXITE NAVE");
+      return Swal.fire({
+        icon: "error",
+        title: "Opss...",
+        text: "No exite esa nave, intenta con otra",
+      });
     }
   };
 };
@@ -162,7 +170,11 @@ export const getNameTripuladas = (nombre) => {
       });
     } catch (error) {
       console.log(error);
-      return alert("NO EXITE NAVE");
+      return Swal.fire({
+        icon: "error",
+        title: "Opss...",
+        text: "No exite esa nave, intenta con otra",
+      });
     }
   };
 };

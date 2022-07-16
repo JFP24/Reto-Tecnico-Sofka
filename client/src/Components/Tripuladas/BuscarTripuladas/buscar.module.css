@@ -1,0 +1,31 @@
+.input {
+  padding: 10px;
+  border-radius: 15px;
+  border: solid black 3px;
+}
+.buscar {
+  padding: 10px;
+  border-radius: 15px;
+  border: solid black 3px;
+  background-color: rgb(168, 168, 168);
+  cursor: pointer;
+}
+
+.buscar:hover {
+  background-color: rgb(20, 20, 20);
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.cargar {
+  padding: 10px;
+  border-radius: 15px;
+  border: solid black 3px;
+  background-color: rgb(168, 168, 168);
+  cursor: pointer;
+}
+.cargar:hover {
+  background-color: rgb(20, 20, 20);
+  color: white;
+  transition: all 0.5s ease;
+}
