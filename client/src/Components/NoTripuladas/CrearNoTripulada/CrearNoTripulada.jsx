@@ -1,11 +1,11 @@
 import React from "react";
-import { postLanzadera } from "../../../Redux/Action/action";
+import { postNoTripuladas } from "../../../Redux/Action/action";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-export const CrearLanzadera = () => {
+export const CrearNoTripulada = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [input, setInput] = useState({
@@ -13,7 +13,7 @@ export const CrearLanzadera = () => {
     velocidad: "",
     peso: "",
     combustible: "",
-    creacion: "",
+    funcion: "",
     pais: "",
     image: "",
   });
@@ -27,17 +27,17 @@ export const CrearLanzadera = () => {
       input.nombre.length > 1 &&
       input.velocidad.length > 1 &&
       input.combustible.length > 1 &&
-      input.creacion.length > 1 &&
+      input.funcion.length > 1 &&
       input.pais.length > 1
     ) {
-      dispatch(postLanzadera(input));
+      dispatch(postNoTripuladas(input));
 
       Swal.fire({
         icon: "success",
         title: "Ok",
         text: "Nave creada correctamente!",
       });
-      navigate("/lanzadera");
+      navigate("/NoTripulada");
     } else {
       Swal.fire({
         icon: "error",
@@ -101,12 +101,12 @@ export const CrearLanzadera = () => {
             />
           </div>
           <div>
-            <label>Año:</label>
+            <label>funcion:</label>
             <input
-              placeholder="Ingrese Año de creacion"
+              placeholder="Ingrese la funcion"
               type="text"
-              name="creacion"
-              value={input.creacion}
+              name="funcion"
+              value={input.funcion}
               onChange={(e) => handleChange(e)}
               autoComplete="off"
               //required

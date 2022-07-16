@@ -9,12 +9,24 @@ router.get("/tripulada", async (req, res) => {
   try {
     const { nombre } = req.query;
     if (nombre) {
-      const tripuladaDb = await Tripulada.findOne({
+      const infoDb = await Tripulada.findOne({
         where: {
           nombre,
         },
       });
-      res.status(202).send(tripuladaDb);
+      const info = [
+        {
+          id: infoDb.id,
+          nombre: infoDb.nombre,
+          capacidad: infoDb.velocidad,
+          peso: infoDb.peso,
+          combustible: infoDb.combustible,
+          pais: infoDb.pais,
+          orbita: infoDb.funcion,
+          image: infoDb.image,
+        },
+      ];
+      res.status(202).send(info);
     } else {
       const infoDb = await Tripulada.findAll();
       res.send(infoDb);
@@ -47,6 +59,15 @@ router.post("/tripulada", async (req, res) => {
   } catch (error) {
     console.log(error);
   }
+});
+
+router.delete("/tripulada", (req, res) => {
+  let { id } = req.query;
+  console.log();
+  Tripulada.destroy({
+    where: { id: id },
+  });
+  res.status(200).send("Se borró");
 });
 
 module.exports = router;

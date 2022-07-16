@@ -1,50 +1,52 @@
+import { Link } from "react-router-dom";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getLanzaderas, deleteLanzadera } from "../../../Redux/Action/action";
+import {
+  getNoTripuladas,
+  deleteNoTripulada,
+} from "../../../Redux/Action/action";
+import { BuscarNoTripuladas } from "../BuscarNoTripuladas/BuscarNoTripulada";
 import styles from "./cards.module.css";
-import { Link } from "react-router-dom";
-import { SearchName } from "../BuscarLanzadera/BuscarLanzadera";
 
-export const Lanzadera = () => {
+export const NoTripulada = () => {
   const dispatch = useDispatch();
-  const lanzaderas = useSelector((state) => state.lanzaderas);
+  const noTripuladas = useSelector((state) => state.noTripulada);
 
   useEffect(() => {
-    dispatch(getLanzaderas());
+    dispatch(getNoTripuladas());
   }, [dispatch]);
 
-  console.log(lanzaderas);
+  console.log(noTripuladas);
 
   const handleDelete = (e) => {
-    dispatch(deleteLanzadera(e));
+    dispatch(deleteNoTripulada(e));
     window.location.reload();
   };
 
   return (
     <div>
-      <h1>This is lanzadera</h1>
+      <h1>This is notripulada</h1>
       <div>
-        <Link to={"/crearLanzadera"}>
-          <button>Crear NaveLanzadera</button>
+        <Link to={"/CrearNoTripulada"}>
+          <button>crear</button>
         </Link>
       </div>
       <div>
-        <SearchName />
+        <BuscarNoTripuladas />
       </div>
+      <div></div>
       <div className={styles.cards}>
-        {lanzaderas.length > 0 ? (
-          lanzaderas.map((d) => {
+        {noTripuladas.length > 0 ? (
+          noTripuladas.map((d) => {
             return (
-              <div className={styles.container}>
-                <button key={d.id} onClick={() => handleDelete(d.id)}>
-                  x
-                </button>
+              <div className={styles.container} key={d.id}>
+                <button onClick={() => handleDelete(d.id)}>x</button>
                 <div> {d.nombre}</div>
                 <div>{d.velocidad}</div>
                 <div>{d.peso}</div>
                 <div>{d.combustible}</div>
                 <div>{d.pais}</div>
-                <div>{d.creacion}</div>
+                <div>{d.funcion}</div>
               </div>
             );
           })

@@ -1,7 +1,16 @@
-import { GET_LANZADERA, GET_NAME_LANZADERA } from "../Action/type";
+import {
+  GET_LANZADERA,
+  GET_NAME_LANZADERA,
+  GET_NO_TRIPULADA,
+  GET_NAME_NO_TRIPULADA,
+  GET__TRIPULADA,
+  GET_NAME__TRIPULADA,
+} from "../Action/type";
 
 const initialState = {
   lanzaderas: [],
+  noTripulada: [],
+  tripulada: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -15,6 +24,26 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         lanzaderas: action.payload,
+      };
+    case GET_NO_TRIPULADA:
+      return {
+        ...state,
+        noTripulada: action.payload,
+      };
+    case GET_NAME_NO_TRIPULADA:
+      return {
+        ...state,
+        noTripulada: action.payload,
+      };
+    case GET__TRIPULADA:
+      return {
+        ...state,
+        tripulada: action.payload,
+      };
+    case GET_NAME__TRIPULADA:
+      return {
+        ...state,
+        tripulada: action.payload,
       };
 
     default:

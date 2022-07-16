@@ -18,6 +18,7 @@ router.get("/lanzadera", async (req, res) => {
       //console.log(infoDb);
       const info = [
         {
+          id: infoDb.id,
           nombre: infoDb.nombre,
           velocidad: infoDb.velocidad,
           peso: infoDb.peso,
@@ -64,6 +65,15 @@ router.post("/lanzadera", async (req, res) => {
   } catch (error) {
     console.log(error);
   }
+});
+
+router.delete("/lanzadera", (req, res) => {
+  let { id } = req.query;
+  console.log();
+  Lanzadera.destroy({
+    where: { id: id },
+  });
+  res.status(200).send("Se borró");
 });
 
 module.exports = router;

@@ -8,6 +8,12 @@ export const Home = () => {
       <Link to={"/lanzadera"}>
         <button>Naves Lanzaderas</button>
       </Link>
+      <Link to={"/NoTripulada"}>
+        <button>Naves No Tripuladas</button>
+      </Link>
+      <Link to={"/Tripulada"}>
+        <button>Naves Tripuladas</button>
+      </Link>
     </div>
   );
 };

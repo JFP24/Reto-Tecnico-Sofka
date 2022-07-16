@@ -1,19 +1,19 @@
 import React from "react";
-import { postLanzadera } from "../../../Redux/Action/action";
+import { postTripuladas } from "../../../Redux/Action/action";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-export const CrearLanzadera = () => {
+export const CrearTripulada = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [input, setInput] = useState({
     nombre: "",
-    velocidad: "",
+    capacidad: "",
     peso: "",
     combustible: "",
-    creacion: "",
+    orbita: "",
     pais: "",
     image: "",
   });
@@ -25,19 +25,19 @@ export const CrearLanzadera = () => {
 
     if (
       input.nombre.length > 1 &&
-      input.velocidad.length > 1 &&
+      input.capacidad.length > 1 &&
       input.combustible.length > 1 &&
-      input.creacion.length > 1 &&
+      input.orbita.length > 1 &&
       input.pais.length > 1
     ) {
-      dispatch(postLanzadera(input));
+      dispatch(postTripuladas(input));
 
       Swal.fire({
         icon: "success",
         title: "Ok",
         text: "Nave creada correctamente!",
       });
-      navigate("/lanzadera");
+      navigate("/Tripulada");
     } else {
       Swal.fire({
         icon: "error",
@@ -65,12 +65,12 @@ export const CrearLanzadera = () => {
             />
           </div>
           <div>
-            <label>Velocidad:</label>
+            <label>capacidad:</label>
             <input
-              placeholder="Ingrese Velocidad"
+              placeholder="Ingrese capacidad"
               type="numbre"
-              name="velocidad"
-              value={input.velocidad}
+              name="capacidad"
+              value={input.capacidad}
               onChange={(e) => handleChange(e)}
               autoComplete="off"
               //required
@@ -101,12 +101,12 @@ export const CrearLanzadera = () => {
             />
           </div>
           <div>
-            <label>Año:</label>
+            <label>orbita:</label>
             <input
-              placeholder="Ingrese Año de creacion"
+              placeholder="Ingrese la funcion"
               type="text"
-              name="creacion"
-              value={input.creacion}
+              name="orbita"
+              value={input.orbita}
               onChange={(e) => handleChange(e)}
               autoComplete="off"
               //required
