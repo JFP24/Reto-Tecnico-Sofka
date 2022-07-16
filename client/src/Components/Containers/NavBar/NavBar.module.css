@@ -1,0 +1,23 @@
+.container {
+  background-color: #16679a;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  font-weight: bold;
+}
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: Arial Black;
+  font-weight: bold;
+  background: #ffffff;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4), 0px -1px 1px rgba(0, 0, 0, 0.3);
+}

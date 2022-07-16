@@ -1,0 +1,20 @@
+.container {
+  min-height: calc(100vh - 88px);
+  background-image: url("https://wallpapergets.com/1/full/c/4/d/1563417.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.routes {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 400px;
+}
+
+.button {
+  padding: 50px;
+  border-radius: 100px;
+  font-size: 30px;
+  font-weight: 700;
+  cursor: pointer;
+}
