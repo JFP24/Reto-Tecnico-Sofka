@@ -27,7 +27,7 @@ export const CrearTripulada = () => {
 
     if (
       input.nombre.length > 1 &&
-      input.capacidad.length > 1 &&
+      input.capacidad.length >= 1 &&
       input.combustible.length > 1 &&
       input.orbita.length > 1 &&
       input.pais.length > 1
