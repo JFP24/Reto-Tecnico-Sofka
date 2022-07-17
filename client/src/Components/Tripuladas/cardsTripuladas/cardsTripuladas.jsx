@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getTripuladas, deleteTripulada } from "../../../Redux/Action/action";
-import { BuscarTripuladas } from "../BuscarTripuladas/BuscarTripuladas";
+import { BuscarTripuladas } from "../BuscarTripuladas/BuscarTripuladas.jsx";
 import styles from "./cards.module.css";
 import { NavBar } from "../../Containers/NavBar/NavBar";
 

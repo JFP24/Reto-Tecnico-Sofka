@@ -35,7 +35,7 @@ export const BuscarTripuladas = () => {
       <input
         className={styles.input}
         name="buscar"
-        placeholder="Buscá tu juego...."
+        placeholder="Buscá tu nave...."
         onChange={handleInputChange}
         value={input.buscar}
         autoComplete="off"

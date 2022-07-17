@@ -15,7 +15,7 @@ export const getLanzaderas = () => {
   return async (dispatch) => {
     try {
       //hacemos el llamado tipo get , por medio de promesos
-      const navesLanzadera = await axios.get(`/lanzadera`);
+      const navesLanzadera = await axios.get(`http://localhost:3001/lanzadera`);
       return dispatch({
         type: GET_LANZADERA,
         //retornamos a el reducer la data que nos esta llegando desde el back con las naves lanzaderas
@@ -30,7 +30,9 @@ export const getLanzaderas = () => {
 export const getNameLanzadera = (nombre) => {
   return async (dispatch) => {
     try {
-      const getNameLanzadera = await axios.get(`/lanzadera?nombre=${nombre}`);
+      const getNameLanzadera = await axios.get(
+        `http://localhost:3001/lanzadera?nombre=${nombre}`
+      );
       return dispatch({
         type: GET_NAME_LANZADERA,
         payload: getNameLanzadera.data,
@@ -50,7 +52,7 @@ export const postLanzadera = (payload) => {
   return async () => {
     console.log(payload);
     try {
-      const post = await axios.post("/lanzadera", payload);
+      const post = await axios.post("http://localhost:3001/lanzadera", payload);
       return post;
     } catch (error) {
       console.log(error);
@@ -61,7 +63,9 @@ export const postLanzadera = (payload) => {
 export const deleteLanzadera = (id) => {
   return async () => {
     try {
-      const post = await axios.delete(`/lanzadera?id=${id}`);
+      const post = await axios.delete(
+        `http://localhost:3001/lanzadera?id=${id}`
+      );
       return post;
     } catch (error) {
       console.log(error);
@@ -73,7 +77,9 @@ export const getNoTripuladas = () => {
   return async (dispatch) => {
     try {
       //hacemos el llamado tipo get , por medio de promesos
-      const navesNoTripuladas = await axios.get(`/notripulada`);
+      const navesNoTripuladas = await axios.get(
+        `http://localhost:3001/notripulada`
+      );
       return dispatch({
         type: GET_NO_TRIPULADA,
         //retornamos a el reducer la data que nos esta llegando desde el back con las naves lanzaderas
@@ -89,7 +95,7 @@ export const getNameNoTripuladas = (nombre) => {
   return async (dispatch) => {
     try {
       const getNameNoTripuladas = await axios.get(
-        `/notripulada?nombre=${nombre}`
+        `http://localhost:3001/notripulada?nombre=${nombre}`
       );
       return dispatch({
         type: GET_NAME_NO_TRIPULADA,
@@ -110,7 +116,10 @@ export const postNoTripuladas = (payload) => {
   return async () => {
     console.log(payload);
     try {
-      const post = await axios.post("/notripulada", payload);
+      const post = await axios.post(
+        "http://localhost:3001/notripulada",
+        payload
+      );
       return post;
     } catch (error) {
       console.log(error);
@@ -121,7 +130,9 @@ export const postNoTripuladas = (payload) => {
 export const deleteNoTripulada = (id) => {
   return async () => {
     try {
-      const post = await axios.delete(`/notripulada?id=${id}`);
+      const post = await axios.delete(
+        `http://localhost:3001/notripulada?id=${id}`
+      );
       return post;
     } catch (error) {
       console.log(error);
@@ -133,7 +144,9 @@ export const getTripuladas = () => {
   return async (dispatch) => {
     try {
       //hacemos el llamado tipo get , por medio de promesos
-      const navesTripuladas = await axios.get(`/tripulada`);
+      const navesTripuladas = await axios.get(
+        `http://localhost:3001/tripulada`
+      );
       return dispatch({
         type: GET__TRIPULADA,
         //retornamos a el reducer la data que nos esta llegando desde el back con las naves lanzaderas
@@ -148,7 +161,9 @@ export const getTripuladas = () => {
 export const getNameTripuladas = (nombre) => {
   return async (dispatch) => {
     try {
-      const getNameTripuladas = await axios.get(`/tripulada?nombre=${nombre}`);
+      const getNameTripuladas = await axios.get(
+        `http://localhost:3001/tripulada?nombre=${nombre}`
+      );
       return dispatch({
         type: GET_NAME__TRIPULADA,
         payload: getNameTripuladas.data,
